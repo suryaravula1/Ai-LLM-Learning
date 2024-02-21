@@ -1,3 +1,4 @@
+// Service for ingesting documents and storing embeddings in OnboardEase
 package dev.nano.tptragbot.langchain.service;
 
 import dev.langchain4j.data.document.Document;
