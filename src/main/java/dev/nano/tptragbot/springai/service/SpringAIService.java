@@ -1,3 +1,4 @@
+// Service for handling Spring AI-based embeddings and question answering in OnboardEase
 package dev.nano.tptragbot.springai.service;
 
 import dev.nano.tptragbot.common.model.Progress;
