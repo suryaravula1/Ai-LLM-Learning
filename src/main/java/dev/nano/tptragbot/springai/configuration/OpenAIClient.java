@@ -1,3 +1,4 @@
+// Configuration for OpenAI client integration in OnboardEase
 package dev.nano.tptragbot.springai.configuration;
 
 import org.springframework.ai.openai.OpenAiChatClient;
