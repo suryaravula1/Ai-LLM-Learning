@@ -1,3 +1,4 @@
+// Configuration for Spring AI integration in OnboardEase
 package dev.nano.tptragbot.springai.configuration;
 
 import org.springframework.ai.embedding.EmbeddingClient;
