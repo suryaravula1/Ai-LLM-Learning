@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OnboardEase</title>
+    <link href="/styles/styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container d-flex align-items-center">
+        <img src="/images/logo.png" alt="Logo" style="width:80px;">
+        <h2 class="ml-3 mb-0 text-white">Welcome to OnboardEase: Your Personal Training Assistant</h2>
+    </div>
+</nav>
+<body style="padding-top: 70px;">
+<div class="container mt-5">
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Library Selection</h5>
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <select class="form-select" id="modelSelection">
+                                    <option value="langchain" selected>Langchain</option>
+                                    <option value="spring-ai">Spring AI</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12">
+            <hr class="horizontal-divider">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-5">
+            <form id="uploadForm" enctype="multipart/form-data">
+                <h3 class="text-center mb-3"><h3 class="text-center mb-3">Upload your training documents or enter URLs!</h3></h3>
+                <input type="text" id="linkInput" placeholder="Enter a link and press Enter" class="form-control mb-3">
+                <div id="warningMessage" class="text-danger mb-3" style="display: none;">
+                    <i class="fas fa-exclamation-triangle"></i> Please enter a link in the input field before pressing Enter.
+                </div>
+                <div id="linkBadges" class="mb-3"></div>
+                <input type="file" name="files" multiple class="form-control mb-3">
+                <button type="button" id="uploadButton" class="btn btn-primary mb-3">Upload</button>
+                <div class="spinner-border text-primary" id="uploadSpinner" style="display: none;"></div>
+                <button type="button" id="ingestButton" disabled class="btn btn-secondary mb-3">Ingest</button>
+                <div class="spinner-border text-secondary" id="ingestSpinner" style="display: none;"></div>
+            </form>
+            <progress id="progressBar" value="0" max="100" class="w-100 mb-3"></progress>
+            <span id="progressText" class="d-block mb-3"></span>
+            <div id="successMessage" class="alert alert-success" role="alert" style="display: none;"></div>
+            <div id="linkTableDiv" style="display: none;">
+                <table class="table table-striped mt-3" id="linkTable">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">URL</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Rows will be added dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-2">
+            <hr class="vertical-divider">
+        </div>
+        <!--<div class="col-5">
+            <div class="row">
+                <h3 class="text-center mb-3">Ask your training-related queries here!</h3>
+                <form>
+                    <div class="mb-3">
+                        <label for="questionInput" class="form-label">Question</label>
+                        <input type="text" class="form-control" id="questionInput" name="question" placeholder="Enter your question" required>
+                    </div>
+                    <div class="mb-3 text-center">
+                        <button id="submitBtn" type="button" class="btn btn-primary">Ask!</button>
+                        <button id="clearBtn" type="button" class="btn btn-secondary">Clear</button>
+                    </div>
+                </form>
+            </div>
+            <div class="row my-5">
+                <label for="answerBox" class="form-label"><h5>Answer</h5></label>
+                <div class="position-relative my-3">
+                    <textarea class="form-control" rows="10" id="answerBox" disabled></textarea>
+                    <a href="#" class="position-absolute top-0 end-0 m-2" id="copyBtn">
+                        <i class="far fa-copy"></i>
+                    </a>
+                </div>
+            </div>
+        </div>-->
+        <div class="col-5">
+            <div class="row">
+                <h3 class="text-center mb-3">Ask your training-related queries here!</h3>
+                <div id="chatBox" class="mb-3" style="height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+                    <!-- Chat messages will be added here dynamically -->
+                </div>
+                <div id="loadingSpinner" style="display: none;">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <form id="chatForm">
+                    <div class="mb-3">
+                        <label for="questionInput" class="form-label">Question</label>
+                        <input type="text" class="form-control" id="questionInput" name="question" placeholder="Enter your question" required>
+                    </div>
+                    <div class="mb-3 text-center">
+                        <button id="submitBtn" type="button" class="btn btn-primary">Send</button>
+                        <button id="clearBtn" type="button" class="btn btn-secondary">Clear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer mt-auto py-3 bg-dark text-white">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <span id="footer-text">Made with ❤️ in </span>
+            <div>
+                <a href="https://www.linkedin.com/in/miliariadnane" target="_blank" class="text-white">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://twitter.com/miliariadnane" target="_blank" class="text-white ml-2">
+                    <i class="fab fa-twitter fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="/scripts/upload.js"></script>
+<script src="/scripts/ingest.js"></script>
+<script src="/scripts/chat.js"></script>
+<script src="/scripts/main.js"></script>
+</script>
+</body>
+</html>

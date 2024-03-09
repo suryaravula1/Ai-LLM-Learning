@@ -1,0 +1,34 @@
+# Langchain4J configuration
+langchain:
+  api-key: ${OPENAI_API_KEY}
+  timeout: 30
+
+# Spring configuration
+spring:
+  datasource:
+      username: postgres
+      password: postgres
+      url: jdbc:postgresql://localhost:5433/vector_store
+  devtools:
+    restart:
+      exclude: "**/uploads/**/*"
+  threads:
+    virtual:
+      enabled: true
+  # Spring AI Configuration
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+
+# Application specific configuration
+app:
+  version: 1.0.0
+  max-file-size: 5MB
+  supported-formats: pdf,txt,xls,xlsx,csv,json
+
+# Spring Boot Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
