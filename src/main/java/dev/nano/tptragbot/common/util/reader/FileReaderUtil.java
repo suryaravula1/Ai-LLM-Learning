@@ -20,6 +20,7 @@ import java.io.Reader;
 
 public class FileReaderUtil {
 
+    // Reads the contents of a CSV file and returns it as a String for embedding
     public static String readCsvFile(Resource resource) {
         StringBuilder content = new StringBuilder();
 
