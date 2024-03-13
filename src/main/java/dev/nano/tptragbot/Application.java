@@ -1,3 +1,5 @@
+// Main entry point for the OnboardEase Spring Boot application
+// This class boots up the application context and starts the web server
 package dev.nano.tptragbot;
 
 import org.springframework.boot.SpringApplication;
