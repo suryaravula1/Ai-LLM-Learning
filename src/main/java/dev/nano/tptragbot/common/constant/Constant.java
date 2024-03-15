@@ -1,3 +1,4 @@
+// This class holds application-wide constant values for OnboardEase
 package dev.nano.tptragbot.common.constant;
 
 public class Constant {
