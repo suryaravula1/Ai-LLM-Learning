@@ -1,3 +1,4 @@
+// This class represents the sources (URLs and file paths) for documents ingested by OnboardEase
 package dev.nano.tptragbot.common.model;
 
 import java.util.List;
