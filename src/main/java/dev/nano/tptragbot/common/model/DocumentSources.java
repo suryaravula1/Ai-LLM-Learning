@@ -12,6 +12,7 @@ public class DocumentSources {
         this.paths = paths;
     }
 
+    // Returns the list of URLs for document sources
     public List<String> getUrls() {
         return urls;
     }
