@@ -1,3 +1,4 @@
+// This class handles file storage and management for uploaded documents in OnboardEase
 package dev.nano.tptragbot.common.util.filemanagement;
 
 import jakarta.annotation.PostConstruct;
