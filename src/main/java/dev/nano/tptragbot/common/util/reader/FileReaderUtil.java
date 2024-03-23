@@ -1,3 +1,4 @@
+// This class provides utility methods for reading and parsing different file types in OnboardEase
 package dev.nano.tptragbot.common.util.reader;
 
 import org.apache.commons.csv.CSVParser;
