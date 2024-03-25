@@ -1,3 +1,4 @@
+// This class implements the core chat logic for the Langchain4j-based onboarding assistant in OnboardEase
 package dev.nano.tptragbot.langchain.agent;
 
 import dev.langchain4j.service.SystemMessage;
