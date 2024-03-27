@@ -1,3 +1,4 @@
+// This class configures document loading and preparation for Langchain4j in OnboardEase
 package dev.nano.tptragbot.langchain.configuration;
 
 import dev.langchain4j.data.document.Document;
