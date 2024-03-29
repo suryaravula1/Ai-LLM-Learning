@@ -1,3 +1,4 @@
+// This class configures Langchain4j integration and beans for OnboardEase
 package dev.nano.tptragbot.langchain.configuration;
 
 import dev.langchain4j.data.segment.TextSegment;
