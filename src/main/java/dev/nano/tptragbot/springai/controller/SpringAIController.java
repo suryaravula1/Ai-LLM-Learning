@@ -1,3 +1,4 @@
+// Controller for handling Spring AI chatbot endpoints in OnboardEase
 package dev.nano.tptragbot.springai.controller;
 
 import dev.nano.tptragbot.common.model.Progress;

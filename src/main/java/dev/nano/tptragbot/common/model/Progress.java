@@ -9,6 +9,7 @@ public class Progress {
     @Setter
     private int total;
 
+    // Increments the progress count and updates the percentage
     public void increment() {
         current++;
     }

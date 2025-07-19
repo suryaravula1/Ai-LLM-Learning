@@ -51,6 +51,7 @@ public class FileManager {
         return ALLOWED_EXTENSIONS.contains(extension.toLowerCase());
     }
 
+    // Stores the uploaded file and returns the storage path
     public String storeFile(MultipartFile file) {
         try {
             // Check if the file is empty

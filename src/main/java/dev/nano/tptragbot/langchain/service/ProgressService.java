@@ -1,3 +1,4 @@
+// Service for tracking and managing ingestion progress per session in OnboardEase
 package dev.nano.tptragbot.langchain.service;
 
 import dev.nano.tptragbot.common.model.Progress;
