@@ -1,0 +1,17 @@
+dev/nano/tptragbot/common/model/Progress.class
+dev/nano/tptragbot/langchain/controller/TPTBotController.class
+dev/nano/tptragbot/Application.class
+dev/nano/tptragbot/langchain/configuration/DocumentConfiguration.class
+dev/nano/tptragbot/langchain/service/DocumentIngestionService.class
+dev/nano/tptragbot/langchain/configuration/LangChainConfiguration.class
+dev/nano/tptragbot/common/util/reader/FileReaderUtil.class
+dev/nano/tptragbot/springai/configuration/SpringAIConfiguration.class
+dev/nano/tptragbot/springai/configuration/OpenAIClient.class
+dev/nano/tptragbot/langchain/service/TPTBotService.class
+dev/nano/tptragbot/springai/service/SpringAIService.class
+dev/nano/tptragbot/common/model/DocumentSources.class
+dev/nano/tptragbot/langchain/service/ProgressService.class
+dev/nano/tptragbot/langchain/agent/OnboardTrainingAssistant.class
+dev/nano/tptragbot/common/util/filemanagement/FileManager.class
+dev/nano/tptragbot/springai/controller/SpringAIController.class
+dev/nano/tptragbot/common/constant/Constant.class

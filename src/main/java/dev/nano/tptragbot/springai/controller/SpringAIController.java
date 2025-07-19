@@ -6,8 +6,8 @@ import dev.nano.tptragbot.common.util.filemanagement.FileManager;
 import dev.nano.tptragbot.langchain.service.ProgressService;
 import dev.nano.tptragbot.springai.service.SpringAIService;
 import jakarta.servlet.http.HttpServletRequest;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
@@ -27,13 +27,22 @@ import java.util.concurrent.ConcurrentHashMap;
 
 @Controller
 @RequestMapping("/spring-ai")
-@RequiredArgsConstructor
-@Slf4j
 public class SpringAIController {
+    
+    private static final Logger log = LoggerFactory.getLogger(SpringAIController.class);
 
     private final FileManager filemanager;
     private final SpringAIService springAiService;
     private final ProgressService progressService;
+    
+    public SpringAIController(
+            FileManager filemanager,
+            SpringAIService springAiService,
+            ProgressService progressService) {
+        this.filemanager = filemanager;
+        this.springAiService = springAiService;
+        this.progressService = progressService;
+    }
 
     // This map will store the uploaded documents for each session
     private final Map<String, List<String>> documentMap = new ConcurrentHashMap<>();

@@ -15,7 +15,8 @@ import dev.langchain4j.store.embedding.EmbeddingStore;
 import dev.langchain4j.store.embedding.pgvector.PgVectorEmbeddingStore;
 import dev.nano.tptragbot.langchain.agent.OnboardTrainingAssistant;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,8 +29,9 @@ import static dev.nano.tptragbot.common.constant.Constant.MODEL_NAME;
 
 @Configuration
 @RequiredArgsConstructor
-@Slf4j
 public class LangChainConfiguration {
+    
+    private static final Logger log = LoggerFactory.getLogger(LangChainConfiguration.class);
 
     @Value("${langchain.timeout}")
     private Long timeout;

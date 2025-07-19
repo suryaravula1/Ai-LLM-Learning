@@ -21,11 +21,11 @@
 	<!-- Start - OnboardEase Project Owners -->
 	<developers>
 		<developer>
-			<name>Adnane Miliari</name>
-			<email>miliari.adnane@gmail.com</email>
+			<name>Surya Ravula</name>
+			<email>suryaravula988@gmail.com</email>
 			<roles>
 				<role>
-					Backend Developer
+					Full Stack Developer
 				</role>
 			</roles>
 		</developer>
@@ -118,7 +118,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<optional>true</optional>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>commons-io</groupId>

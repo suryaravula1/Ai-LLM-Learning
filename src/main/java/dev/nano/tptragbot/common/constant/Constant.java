@@ -8,7 +8,7 @@ public class Constant {
     // Application version for tracking
     public static final String APP_VERSION = "1.0.0";
 
-    public static final String LANGCHAIN_VECTOR_STORE_DATABASE_NAME = "langchain_vector_store";
+    public static final String LANGCHAIN_VECTOR_STORE_DATABASE_NAME = "vector_store";
 
     public static final String PROMPT_TEMPLATE = """
                 As an intelligent learning assistant, you are designed to help new hires understand and learn from their training materials. You have comprehensive knowledge of all the documents and URLs that have been uploaded to the system.

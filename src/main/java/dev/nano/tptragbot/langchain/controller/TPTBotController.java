@@ -25,20 +25,33 @@ import org.springframework.web.multipart.MultipartFile;
 
 import dev.langchain4j.data.document.Document;
 import jakarta.servlet.http.HttpServletRequest;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Controller
 @RequestMapping("/langchain")
-@RequiredArgsConstructor
-@Slf4j
 public class TPTBotController {
+    
+    private static final Logger log = LoggerFactory.getLogger(TPTBotController.class);
 
     private final DocumentConfiguration documentConfiguration;
     private final DocumentIngestionService documentIngestionService;
     private final FileManager fileManager;
     private final TPTBotService tptBotService;
     private final ProgressService progressService;
+    
+    public TPTBotController(
+            DocumentConfiguration documentConfiguration,
+            DocumentIngestionService documentIngestionService,
+            FileManager fileManager,
+            TPTBotService tptBotService,
+            ProgressService progressService) {
+        this.documentConfiguration = documentConfiguration;
+        this.documentIngestionService = documentIngestionService;
+        this.fileManager = fileManager;
+        this.tptBotService = tptBotService;
+        this.progressService = progressService;
+    }
 
 
     // This map will store the uploaded documents for each session

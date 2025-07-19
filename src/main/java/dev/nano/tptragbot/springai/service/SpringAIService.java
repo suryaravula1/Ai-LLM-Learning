@@ -3,8 +3,8 @@ package dev.nano.tptragbot.springai.service;
 
 import dev.nano.tptragbot.common.model.Progress;
 import dev.nano.tptragbot.springai.configuration.OpenAIClient;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.ai.chat.messages.Message;
 import org.springframework.ai.chat.messages.UserMessage;
@@ -32,13 +32,22 @@ import static dev.nano.tptragbot.common.util.reader.FileReaderUtil.readCsvFile;
 //import static dev.nano.tptragbot.common.util.reader.FileReaderUtil.readExcelFile;
 
 @Service
-@RequiredArgsConstructor
-@Slf4j
 public class SpringAIService {
+    
+    private static final Logger log = LoggerFactory.getLogger(SpringAIService.class);
 
     private final VectorStore vectorStore;
     private final JdbcTemplate jdbcTemplate;
     private final OpenAIClient openAiChatClient;
+    
+    public SpringAIService(
+            VectorStore vectorStore,
+            JdbcTemplate jdbcTemplate,
+            OpenAIClient openAiChatClient) {
+        this.vectorStore = vectorStore;
+        this.jdbcTemplate = jdbcTemplate;
+        this.openAiChatClient = openAiChatClient;
+    }
 
     public String askLLM(String query) {
 

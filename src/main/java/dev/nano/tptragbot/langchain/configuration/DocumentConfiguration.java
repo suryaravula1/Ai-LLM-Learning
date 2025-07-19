@@ -4,7 +4,8 @@ package dev.nano.tptragbot.langchain.configuration;
 import dev.langchain4j.data.document.Document;
 import dev.langchain4j.data.document.loader.UrlDocumentLoader;
 import dev.langchain4j.data.document.parser.TextDocumentParser;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -14,8 +15,9 @@ import static dev.langchain4j.data.document.loader.FileSystemDocumentLoader.load
 
 
 @Component
-@Slf4j
 public class DocumentConfiguration {
+    
+    private static final Logger log = LoggerFactory.getLogger(DocumentConfiguration.class);
 
     public List<Document> documents(List<String> urls, List<String> paths) {
 
