@@ -1,8 +1,6 @@
 // Service for handling question answering logic using Langchain4j in OnboardEase
 package dev.nano.tptragbot.langchain.service;
 
-import org.springframework.stereotype.Service;
-
 import dev.nano.tptragbot.langchain.agent.OnboardTrainingAssistant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

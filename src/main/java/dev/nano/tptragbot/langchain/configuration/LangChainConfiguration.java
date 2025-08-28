@@ -14,7 +14,6 @@ import dev.langchain4j.service.AiServices;
 import dev.langchain4j.store.embedding.EmbeddingStore;
 import dev.langchain4j.store.embedding.pgvector.PgVectorEmbeddingStore;
 import dev.nano.tptragbot.langchain.agent.OnboardTrainingAssistant;
-import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -28,7 +27,6 @@ import static dev.nano.tptragbot.common.constant.Constant.MODEL_NAME;
 
 
 @Configuration
-@RequiredArgsConstructor
 public class LangChainConfiguration {
     
     private static final Logger log = LoggerFactory.getLogger(LangChainConfiguration.class);

@@ -2,19 +2,12 @@
 package dev.nano.tptragbot.common.util.reader;
 
 import org.apache.commons.csv.CSVParser;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.DataFormatter;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-//import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.core.io.Resource;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 
@@ -59,9 +52,4 @@ public class FileReaderUtil {
 
         return content.toString();
     }*/
-
-    private static String getCellText(Cell cell) {
-        DataFormatter dataFormatter = new DataFormatter();
-        return dataFormatter.formatCellValue(cell);
-    }
 }
