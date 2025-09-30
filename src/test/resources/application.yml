@@ -1,0 +1,36 @@
+# Test configuration - uses mock values
+langchain:
+  api-key: test-api-key
+  timeout: 30
+
+spring:
+  datasource:
+      username: postgres
+      password: postgres
+      url: jdbc:postgresql://localhost:5433/vector_store
+  devtools:
+    restart:
+      exclude: "**/uploads/**/*"
+  threads:
+    virtual:
+      enabled: true
+  ai:
+    openai:
+      api-key: test-api-key
+
+# Application specific configuration
+app:
+  version: 1.0.0
+  max-file-size: 5MB
+  supported-formats: pdf,txt,xls,xlsx,csv,json
+
+# Spring Boot Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+
+

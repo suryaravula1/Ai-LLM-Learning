@@ -38,7 +38,7 @@ document.getElementById('ingestButton').addEventListener('click', function(event
                         document.getElementById('clearBtn').disabled = false;
                     }
                 });
-            }, 500); // Poll every 1 second
+            }, 500); // Poll every 0.5 second
         } else {
             document.getElementById('ingestSpinner').style.display = 'none';
             swal("Error", "Ingestion failed", "error");

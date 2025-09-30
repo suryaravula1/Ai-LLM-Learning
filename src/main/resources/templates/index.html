@@ -46,13 +46,19 @@
     <div class="row">
         <div class="col-5">
             <form id="uploadForm" enctype="multipart/form-data">
-                <h3 class="text-center mb-3"><h3 class="text-center mb-3">Upload your training documents or enter URLs!</h3></h3>
+                <h3 class="text-center mb-3">Upload your training documents, images, or enter URLs!</h3>
                 <input type="text" id="linkInput" placeholder="Enter a link and press Enter" class="form-control mb-3">
                 <div id="warningMessage" class="text-danger mb-3" style="display: none;">
                     <i class="fas fa-exclamation-triangle"></i> Please enter a link in the input field before pressing Enter.
                 </div>
                 <div id="linkBadges" class="mb-3"></div>
-                <input type="file" name="files" multiple class="form-control mb-3">
+                <input type="file" name="files" multiple class="form-control mb-3" accept=".pdf,.txt,.xls,.xlsx,.csv,.json,.doc,.docx,.ppt,.pptx,.jpg,.jpeg,.png,.gif,.bmp,.tiff,.webp,.svg">
+                <small class="text-muted">
+                    <strong>Supported formats:</strong><br>
+                    📄 Documents: PDF, TXT, XLS, XLSX, CSV, JSON, DOC, DOCX, PPT, PPTX<br>
+                    🖼️ Images: JPG, JPEG, PNG, GIF, BMP, TIFF, WEBP, SVG<br>
+                    📏 Max size: 5MB (documents) / 10MB (images)
+                </small>
                 <button type="button" id="uploadButton" class="btn btn-primary mb-3">Upload</button>
                 <div class="spinner-border text-primary" id="uploadSpinner" style="display: none;"></div>
                 <button type="button" id="ingestButton" disabled class="btn btn-secondary mb-3">Ingest</button>
